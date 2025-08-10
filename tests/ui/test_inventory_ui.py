@@ -27,7 +27,7 @@ def test_inventory_page_has_six_items(page: Page):
     
     actual_count = len(names)
     assert actual_count == 6, f"Expected 6 item names, got {actual_count}"
-    logger.info(f"✅ Test passed: Found {actual_count} items as expected")
+    logger.info(f"Test passed: Found {actual_count} items as expected")
 
 @pytest.mark.ui
 def test_add_single_item_increments_cart(page: Page):
@@ -47,7 +47,7 @@ def test_add_single_item_increments_cart(page: Page):
     assert added == 1, f"Expected to add 1 item, added {added}"
     
     inventory.assert_cart_count(1)
-    logger.info("✅ Test passed: Cart count correctly shows 1 item")
+    logger.info(" Test passed: Cart count correctly shows 1 item")
 
 
 #BONUS TEST
@@ -73,4 +73,4 @@ def test_add_all_items_results_in_cart_count_six(page: Page):
     assert added == 6, f"Expected to add 6 items, added {added}"
     
     inventory.assert_cart_count(6)
-    logger.info("✅ Test passed: Cart count correctly shows 6 items (all items added)")
+    logger.info("Test passed: Cart count correctly shows 6 items (all items added)")
