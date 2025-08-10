@@ -27,7 +27,7 @@ def test_airport_count_is_30(api_request_context: APIRequestContext):
     logger.info(f"Found {actual_count} airports in response")
     
     assert actual_count == 30, f"Expected 30 airports, but found {actual_count}"
-    logger.info("✅ Airport count validation passed: 30 airports found")
+    logger.info("Airport count validation passed: 30 airports found")
 
 @pytest.mark.api
 def test_specific_airports_present(api_request_context: APIRequestContext, airports_test_data):
@@ -49,10 +49,10 @@ def test_specific_airports_present(api_request_context: APIRequestContext, airpo
 
     missing_airports = set(expected_airports) - names
     if missing_airports:
-        logger.error(f"❌ Missing required airports: {missing_airports}")
+        logger.error(f" Missing required airports: {missing_airports}")
         logger.info(f"Available airports: {sorted(names)}")
     else:
-        logger.info(f"✅ All expected airports found: {expected_airports}")
+        logger.info(f"All expected airports found: {expected_airports}")
         
     assert not missing_airports, f"Missing required airports: {missing_airports}"
 
@@ -80,8 +80,8 @@ def test_distance_between_airports_greater_than_400_km(api_request_context: APIR
     logger.info(f"Distance calculated: {distance_km} km")
     
     if distance_km > 400:
-        logger.info(f"✅ Distance validation passed: {distance_km} km > 400 km")
+        logger.info(f" Distance validation passed: {distance_km} km > 400 km")
     else:
-        logger.error(f"❌ Distance validation failed: {distance_km} km <= 400 km")
+        logger.error(f" Distance validation failed: {distance_km} km <= 400 km")
         
     assert distance_km > 400, f"Expected distance > 400 km, but got {distance_km}"
