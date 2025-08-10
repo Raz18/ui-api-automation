@@ -210,7 +210,7 @@ pytest -n auto --dist worksteal
 ### Setup Instructions
 ```bash
 # 1. Clone and navigate to project
-git clone <repository-url>
+git clone https://github.com/Raz18/ui-api-automation 
 cd ui_api_automation
 
 # 2. Create virtual environment
