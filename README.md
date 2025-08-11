@@ -93,23 +93,6 @@ login_button = page.get_by_role("button", name="Sign in")
 # Fallback to stable data attributes
 fallback_locator = page.locator('[data-test="login-button"]')
 ```
-
-### 4. Comprehensive Error Handling & Logging
-```python
-# Structured logging with context
-logger = setup_logger("API_Tests")
-logger.info(f"Making GET request to {endpoint}")
-
-# Defensive JSON parsing with detailed error context
-def safe_json_parse(response):
-    """Defensive JSON parsing with detailed error context."""
-    try:
-        return response.json()
-    except json.JSONDecodeError as e:
-        body_preview = response.text()[:500]
-        raise AssertionError(f"JSON decode error: {e}. Body: {body_preview}")
-```
-
 ## 📁 Project Structure
 
 ```
